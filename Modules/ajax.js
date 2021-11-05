@@ -186,7 +186,7 @@ export function createUser() {
     });
 }
 
-// This exported function allows for posts to be deleted from the firebase, and summarily from the newsfeed section.
+// This exported function allows for posts to be deleted from the firebase, and summarily from the post feed section.
 export function deletePost(postId) {
     // This ajax call executes the delete request, of the targeted post based on the postId.
     $.ajax({
@@ -194,7 +194,7 @@ export function deletePost(postId) {
         type: "DELETE",
         // Declares url from firebase to posts section, and to the specific post by the postId.
         url: `${baseUrl}posts/${postId}${ext}`,
-        // On success, the getPosts callback function is executed to displayPosts. Shows the newsfeed after deleting without a refresh, so as to prevent the user from having to log back in.
+        // On success, the getPosts callback function is executed to displayPosts. Shows the post feed after deleting without a refresh, so as to prevent the user from having to log back in.
         success: () => {
             getPosts(displayPosts);
         },
@@ -203,15 +203,21 @@ export function deletePost(postId) {
     })
 };
 
-// This exported function allows for posts to be edited in the firebase, and summarily in the newsfeed section.
-export function editPost(postId) {
+// This exported function allows for posts to be edited in the firebase, and summarily in the post feed section.
+export function editPost(postId, postBody) {
+    // Creates the new post object.
+    const newPost = {
+        // This declares that the new object will start as an empty object with it's id being the newId, and then be filled with the values from the textarea, the current date from Date(), currentUser.id, and randomly generated like and comment amounts.
+        "body" : postBody
+    }
     // This ajax call executes the edit request, of the targeted post based on the postId.
     $.ajax({
         // Declares PATCH type HTTP method.
         type: "PATCH",
         // Declares url from firebase to posts section, and to the specific post by the postId.
         url: `${baseUrl}posts/${postId}${ext}`,
-        // On success, the getPosts callback function is executed to displayPosts. Shows the newsfeed after deleting without a refresh, so as to prevent the user from having to log back in.
+        data: JSON.stringify(newPost),
+        // On success, the getPosts callback function is executed to displayPosts. Shows the post feed after deleting without a refresh, so as to prevent the user from having to log back in.
         success: () => {
             getPosts(displayPosts);
         },

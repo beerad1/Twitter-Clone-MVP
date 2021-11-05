@@ -46,14 +46,33 @@
         height: 20vh;
         display: inline-block;
         font-family: Inter-Medium;
-        font-size: 1vw;
+        font-size: 3vw;
         background-color: #B9C1D6;
         border: none;
         border-radius: 0 2vw 2vw 2vw;
         box-sizing: border-box;
     }
 
+    fieldset {
+        display: flex;
+        flex-direction: row;
+        margin-left: 15vw;
+        border: none;
+    }
+
     /*Classes*/
+
+    .postCardBtns {
+        margin-left: 5vw;
+        width: 15vw;
+        height: 5vh;
+        font-family: Inter-SemiBold;
+        font-size: 3vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
+        border-radius: 0 2vw 2vw 2vw;
+    }
 
     .dividerBanner {
         height: .5vh;
@@ -67,7 +86,7 @@
     }
 
     .pnhBundlePost {
-        margin-top: 0vh;
+        margin-top: -2vh;
         margin-left: 1vw;
         margin-bottom: -3.5vh;
         display: flex;
@@ -84,6 +103,7 @@
     }
 
     .profImgPost {
+        margin-top: -1.5vh;
         margin-left: 3vw;
         width: 50px;
         height: 50px;
@@ -95,7 +115,7 @@
     .pnhNameTextPost {
         margin-top: 0vh;
         margin-left: 2vw;
-        margin-bottom: 0vh;
+        margin-bottom: -1.5vh;
         font-family: Inter-Regular;
         font-size: 5vw;
         color: #B9C1D6;
@@ -186,6 +206,23 @@
     }
 
     #footer {
+        display: none;
+    }
+
+    #editPostBtn {
+        margin-left: 5vw;
+        width: 15vw;
+        height: 5vh;
+        float: right;
+        font-family: Inter-SemiBold;
+        font-size: 3vw;
+        color: #4D82B4;
+        background-color: #222222;
+        border: none;
+        border-radius: 0 2vw 2vw 2vw;
+    }
+
+    #hideCell {
         display: none;
     }
 
@@ -369,7 +406,27 @@
         box-sizing: border-box;
     }
 
+    fieldset {
+        display: flex;
+        flex-direction: row;
+        margin-left: 19vw;
+        border: none;
+    }
+
     /*Classes*/
+
+    .postCardBtns {
+        margin-left: 2vw;
+        width: 8vw;
+        height: 3vh;
+        font-family: Inter-SemiBold;
+        font-size: 1vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
+        border-radius: 0 .5vw .5vw .5vw;
+    }
+
     .leftBannerText{
         font-family: Inter-Regular;
         font-size: 1vw;
@@ -466,7 +523,7 @@
 
     .pnhBundlePost {
         margin-left: 2vw;
-        margin-bottom: -1.1vh;
+        margin-bottom: 0vh;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -483,14 +540,16 @@
     }
 
     .pnhNameTextPost {
+        margin-top: 0vh;
+        margin-left: 1vw;
+        margin-bottom: -1vh;
         font-family: Inter-Regular;
         font-size: 1.5vw;
         color: #B9C1D6;
     }
 
     .pnhHandTextPost {
-        margin-left: 2vw;
-        margin-right: 4vw;
+        margin-left: 1vw;
         font-family: Inter-Regular;
         font-size: 1vw;
         color: #00ff9d;
@@ -503,7 +562,7 @@
         justify-content: space-evenly;
         align-items: flex-start;
         width: 50vw;
-        height: 20vh;
+        height: 25vh;
         color: #B9C1D6;
         text-align: center;
         background-color: #222222;
@@ -534,8 +593,10 @@
     }
 
     .postFooter {
-        display: grid;
-        grid-template-areas: "span1 span1 . span2 span2 . . field . .";
+        display: flex;
+        flex-direction: row;
+        margin-top: 1vh;
+        margin-left: 3vw;
     }
 
     .postIconsText {
@@ -650,6 +711,20 @@
         display: none;
     }
 
+    #editPostBtn {
+        margin-top: 1vh;
+        margin-left: 2vw;
+        width: 8vw;
+        height: 3vh;
+        float: right;
+        font-family: Inter-SemiBold;
+        font-size: 1vw;
+        color: #4D82B4;
+        background-color: #222222;
+        border: none;
+        border-radius: 0 .5vw .5vw .5vw;
+    }
+
     #mobilePostBox {
        display: none;
        position: fixed;
@@ -669,6 +744,7 @@
        padding: 20px;
        border-radius: 0 1vw 1vw 1vw;
        width: 50vw;
+       height: 15vh;
    }
 
    /* The Close Button */
