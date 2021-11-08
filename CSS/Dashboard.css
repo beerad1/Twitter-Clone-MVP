@@ -62,6 +62,21 @@
 
     /*Classes*/
 
+    .like-icon {
+        grid-area: span1;
+        font-family: Inter-Bold;
+        font-size: 3vw;
+        color: rgb(255, 58, 179);
+    }
+
+    .comment-icon {
+        margin-left: 1.5vw;
+        grid-area: span2;
+        font-family: Inter-Bold;
+        font-size: 3vw;
+        color: rgb(251, 255, 0);
+    }
+
     .postCardBtns {
         margin-left: 5vw;
         width: 15vw;
@@ -582,11 +597,19 @@
 
     .like-icon {
         grid-area: span1;
+        font-family: Inter-Bold;
+        font-size: 1vw;
+        color: rgb(255, 58, 179);
     }
 
     .comment-icon {
+        margin-left: 1.5vw;
         grid-area: span2;
+        font-family: Inter-Bold;
+        font-size: 1vw;
+        color: rgb(251, 255, 0);
     }
+
 
     .post-btn-group {
         grid-area: field;

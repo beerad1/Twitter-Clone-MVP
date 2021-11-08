@@ -90,7 +90,6 @@ export function createPost(callback = console.log) {
     // Create new date object with US format.
     const date = new Date();
     let dateUS = date.toLocaleString('en-US');
-    console.log(dateUS);
     // Creates the new post object.
     const newPost = {
         // This declares that the new object will start as an empty object with it's id being the newId, and then be filled with the values from the textarea, the current date from Date(), currentUser.id, and randomly generated like and comment amounts.

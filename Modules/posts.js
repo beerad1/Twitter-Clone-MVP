@@ -1,6 +1,6 @@
 // These functions import functions (getUser, deletePost, displayUserOnPost) from the ajax.js and users.js file.
 import { getUser, deletePost, editPost } from "./ajax.js";
-import { displayUserOnPost } from "./users.js";
+import { displayUserOnPost, currentUser } from "./users.js";
 
 // This is the major function that iterates through a for loop and creates the post card for each post that will be displayed on screen. It takes the posts objects from the firebase, and uses the information therein to populate all relevant data throughout. It also contains the delete and edit functions for the posts.
 export function displayPosts(posts) {
@@ -29,10 +29,10 @@ export function displayPosts(posts) {
             <div class="postFooter">
                 <span class="like-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#f5f5f5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/>Likes</svg>${post.likes}</span>
                 <span class="comment-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#f5f5f5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 17.17L18.83 16H4V4h16v13.17zM20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/>Comments</svg>${post.comments}</span>
-                <fieldset class="post-btn-group" id=${post.id}>
-                    <input type="button" class="edit-btn postCardBtns" value="EDIT"></button>
-                    <input type="button" class="delete-btn postCardBtns" value="DELETE"></button>
-                </fieldset>
+                ${currentUser.id === post.userId ? `<fieldset class="post-btn-group" id=${post.id}>
+                    <input type="button" class="edit-btn postCardBtns" value="EDIT">
+                    <input type="button" class="delete-btn postCardBtns" value="DELETE">
+                </fieldset>` : ""}
             </div>
         </section>              
     `);
